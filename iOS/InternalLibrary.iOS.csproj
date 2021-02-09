@@ -85,6 +85,30 @@
       <Name>InternalLibrary</Name>
       <ReferenceSourceTarget>ProjectReference</ReferenceSourceTarget>
     </ProjectReference>
+    <ProjectReference Include="..\XToolkit.WhiteLabel\Softeq.XToolkit.Bindings\Softeq.XToolkit.Bindings.csproj">
+      <Project>{0548367E-6173-47FC-9F27-D1F68609B168}</Project>
+      <Name>Softeq.XToolkit.Bindings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XToolkit.WhiteLabel\Softeq.XToolkit.Bindings.iOS\Softeq.XToolkit.Bindings.iOS.csproj">
+      <Project>{2D399BA9-1878-43E2-AF05-6873EAE9151B}</Project>
+      <Name>Softeq.XToolkit.Bindings.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XToolkit.WhiteLabel\Softeq.XToolkit.Common\Softeq.XToolkit.Common.csproj">
+      <Project>{990783C7-8CCB-4648-A89C-E8189995F780}</Project>
+      <Name>Softeq.XToolkit.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XToolkit.WhiteLabel\Softeq.XToolkit.Common.iOS\Softeq.XToolkit.Common.iOS.csproj">
+      <Project>{6BCB2009-2E46-458C-BCAA-AFC27A631924}</Project>
+      <Name>Softeq.XToolkit.Common.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XToolkit.WhiteLabel\Softeq.XToolkit.WhiteLabel\Softeq.XToolkit.WhiteLabel.csproj">
+      <Project>{8CB59AF4-4B0F-414B-926A-3C5380135437}</Project>
+      <Name>Softeq.XToolkit.WhiteLabel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XToolkit.WhiteLabel\Softeq.XToolkit.WhiteLabel.iOS\Softeq.XToolkit.WhiteLabel.iOS.csproj">
+      <Project>{CC89DBC6-E68A-4C85-91C4-E276D3BC3C2E}</Project>
+      <Name>Softeq.XToolkit.WhiteLabel.iOS</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
