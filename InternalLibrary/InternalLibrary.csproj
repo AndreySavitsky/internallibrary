@@ -15,8 +15,6 @@
      <ProjectReference Include="..\XToolkit.WhiteLabel\Softeq.XToolkit.WhiteLabel\Softeq.XToolkit.WhiteLabel.csproj">
        <ReferenceSourceTarget>ProjectReference</ReferenceSourceTarget>
      </ProjectReference>
-     <ProjectReference Include="..\XToolkit.WhiteLabel\Softeq.XToolkit.WhiteLabel.Essentials\Softeq.XToolkit.WhiteLabel.Essentials.csproj" />
-     <ProjectReference Include="..\XToolkit.WhiteLabel\Softeq.XToolkit.Connectivity\Softeq.XToolkit.Connectivity.csproj" />
    </ItemGroup>
    <ItemGroup>
      <Compile Remove="Properties\AssemblyInfo.cs" />
