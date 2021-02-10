@@ -114,6 +114,30 @@
       <Project>{CC89DBC6-E68A-4C85-91C4-E276D3BC3C2E}</Project>
       <Name>Softeq.XToolkit.WhiteLabel.iOS</Name>
     </ProjectReference>
+    <ProjectReference Include="..\XToolkit.WhiteLabel\Softeq.XToolkit.WhiteLabel.Essentials\Softeq.XToolkit.WhiteLabel.Essentials.csproj">
+      <Project>{756F33F5-B53D-4C9B-B761-89EE7544E81F}</Project>
+      <Name>Softeq.XToolkit.WhiteLabel.Essentials</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XToolkit.WhiteLabel\Softeq.XToolkit.WhiteLabel.Essentials.iOS\Softeq.XToolkit.WhiteLabel.Essentials.iOS.csproj">
+      <Project>{23AA0E71-BF8F-47A8-A915-C8AC4841E064}</Project>
+      <Name>Softeq.XToolkit.WhiteLabel.Essentials.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XToolkit.WhiteLabel\Softeq.XToolkit.Permissions\Softeq.XToolkit.Permissions.csproj">
+      <Project>{2EBE805C-D6BA-4B80-9DD9-28DB0195CF51}</Project>
+      <Name>Softeq.XToolkit.Permissions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XToolkit.WhiteLabel\Softeq.XToolkit.Permissions.iOS\Softeq.XToolkit.Permissions.iOS.csproj">
+      <Project>{7EB2ADA9-C599-4644-AC6B-109F1AEED19F}</Project>
+      <Name>Softeq.XToolkit.Permissions.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XToolkit.WhiteLabel\Softeq.XToolkit.Connectivity\Softeq.XToolkit.Connectivity.csproj">
+      <Project>{9F66FA6F-2AC0-454F-B083-64E105079022}</Project>
+      <Name>Softeq.XToolkit.Connectivity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XToolkit.WhiteLabel\Softeq.XToolkit.Connectivity.iOS\Softeq.XToolkit.Connectivity.iOS.csproj">
+      <Project>{E3CCEEA3-C0B0-47B0-B414-2D6C18AC100A}</Project>
+      <Name>Softeq.XToolkit.Connectivity.iOS</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
@@ -125,8 +149,8 @@
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
-    <InterfaceDefinition Include="Main.storyboard" />
     <InterfaceDefinition Include="ViewControllers\BookListStoryboard.storyboard" />
+    <InterfaceDefinition Include="Main.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -135,15 +159,13 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="ViewController.cs" />
-    <Compile Include="ViewController.designer.cs">
-      <DependentUpon>ViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="CustomIosBootstrapper.cs" />
     <Compile Include="ViewControllers\BookListViewController.cs" />
     <Compile Include="ViewControllers\BookListViewController.designer.cs">
       <DependentUpon>BookListViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewController.cs" />
+    <Compile Include="ViewController.designer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
