@@ -140,6 +140,9 @@
     </Compile>
     <Compile Include="CustomIosBootstrapper.cs" />
     <Compile Include="ViewControllers\BookListViewController.cs" />
+    <Compile Include="ViewControllers\BookListViewController.designer.cs">
+      <DependentUpon>BookListViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
