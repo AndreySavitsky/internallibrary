@@ -6,6 +6,10 @@
    </PropertyGroup>
    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
      <DebugType>full</DebugType>
+     <LangVersion>latestmajor</LangVersion>
+   </PropertyGroup>
+   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+     <LangVersion>latestmajor</LangVersion>
    </PropertyGroup>
    <ItemGroup>
      <ProjectReference Include="..\XToolkit.WhiteLabel\Softeq.XToolkit.WhiteLabel\Softeq.XToolkit.WhiteLabel.csproj">
