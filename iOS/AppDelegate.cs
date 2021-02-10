@@ -1,58 +1,35 @@
 ﻿using Foundation;
+using InternalLibrary.ViewModels;
+using Softeq.XToolkit.WhiteLabel.Bootstrapper;
+using Softeq.XToolkit.WhiteLabel.Bootstrapper.Abstract;
+using Softeq.XToolkit.WhiteLabel.iOS;
+using Softeq.XToolkit.WhiteLabel.Navigation;
 using UIKit;
 
 namespace InternalLibrary.iOS
 {
-    // The UIApplicationDelegate for the application. This class is responsible for launching the
-    // User Interface of the application, as well as listening (and optionally responding) to application events from iOS.
-    [Register("AppDelegate")]
-    public class AppDelegate : UIApplicationDelegate
+    [Register(nameof(AppDelegate))]
+    public class AppDelegate : AppDelegateBase
     {
-        // class-level declarations
-
-        public override UIWindow Window
-        {
-            get;
-            set;
-        }
-
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
+            var result = base.FinishedLaunching(application, launchOptions);
+
             // Override point for customization after application launch.
-            // If not required for your application you can safely delete this method
 
-            return true;
+            return result;
         }
 
-        public override void OnResignActivation(UIApplication application)
+        protected override IBootstrapper CreateBootstrapper()
         {
-            // Invoked when the application is about to move from active to inactive state.
-            // This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) 
-            // or when the user quits the application and it begins the transition to the background state.
-            // Games should use this method to pause the game.
+            return new CustomIosBootstrapper();
         }
 
-        public override void DidEnterBackground(UIApplication application)
+        protected override void InitializeNavigation(IContainer container)
         {
-            // Use this method to release shared resources, save user data, invalidate timers and store the application state.
-            // If your application supports background exection this method is called instead of WillTerminate when the user quits.
-        }
-
-        public override void WillEnterForeground(UIApplication application)
-        {
-            // Called as part of the transiton from background to active state.
-            // Here you can undo many of the changes made on entering the background.
-        }
-
-        public override void OnActivated(UIApplication application)
-        {
-            // Restart any tasks that were paused (or not yet started) while the application was inactive. 
-            // If the application was previously in the background, optionally refresh the user interface.
-        }
-
-        public override void WillTerminate(UIApplication application)
-        {
-            // Called when the application is about to terminate. Save data, if needed. See also DidEnterBackground.
+            var navigationService = container.Resolve<IPageNavigationService>();
+            navigationService.Initialize(Window.RootViewController!);
+            navigationService.For<BookListViewModel>().Navigate();
         }
     }
 }
