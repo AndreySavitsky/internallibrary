@@ -9,7 +9,7 @@ namespace InternalLibrary.iOS.ViewControllers
     {
         public BookListViewController(IntPtr handle) : base(handle)
         {
-
+            Title = "Book list";
         }
 
         public override void ViewDidLoad()

@@ -6,7 +6,7 @@
     <scenes>
         <scene sceneID="201">
             <objects>
-                <viewController id="202" sceneMemberID="viewController" customClass="BookListViewController">
+                <viewController id="202" sceneMemberID="viewController" customClass="BookListViewController" storyboardIdentifier="BookListViewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="199"/>
                         <viewControllerLayoutGuide type="bottom" id="200"/>
