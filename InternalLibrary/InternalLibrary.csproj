@@ -19,4 +19,7 @@
      <None Remove="project.nuget.cache" />
      <None Remove="project.lock.json" />
    </ItemGroup>
+   <ItemGroup>
+     <Folder Include="ViewModels\" />
+   </ItemGroup>
  </Project>
