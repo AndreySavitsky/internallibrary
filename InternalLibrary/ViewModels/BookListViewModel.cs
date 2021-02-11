@@ -1,5 +1,5 @@
 ﻿using System;
-
+using InternalLibrary.Services;
 using Softeq.XToolkit.WhiteLabel.Navigation;
 
 namespace InternalLibrary.ViewModels
@@ -10,8 +10,9 @@ namespace InternalLibrary.ViewModels
 
         public BookListViewModel(
             IPageNavigationService pageNavigationService,
-            IDialogsService dialogsService)
-            : base(dialogsService)
+            IDialogsService dialogsService,
+            IBookRepository bookRepository)
+            : base(dialogsService, bookRepository)
         {
             _pageNavigationService = pageNavigationService;
         }

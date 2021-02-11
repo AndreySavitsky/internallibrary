@@ -21,6 +21,8 @@ namespace InternalLibrary.iOS
         protected override void ConfigureIoc(IContainerBuilder builder)
         {
             // core
+            CustomBootstrapper.Configure(builder);
+
             builder.Singleton<IosAppInfoService, IAppInfoService>();
 
             builder.Singleton<StoryboardDialogsService, IDialogsService>();

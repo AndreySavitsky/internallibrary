@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using InternalLibrary.Services;
 using Softeq.XToolkit.Common.Collections;
 using Softeq.XToolkit.Common.Commands;
 using Softeq.XToolkit.WhiteLabel.Dialogs;
@@ -12,11 +13,14 @@ namespace InternalLibrary.ViewModels
     public abstract class SimpleListViewModelBase : ViewModelBase
     {
         private readonly IDialogsService _dialogsService;
+        private readonly IBookRepository _bookRepository;
 
         public SimpleListViewModelBase(
-            IDialogsService dialogsService)
+            IDialogsService dialogsService,
+            IBookRepository bookRepository)
         {
             _dialogsService = dialogsService;
+            _bookRepository = bookRepository;
 
             ItemModels = new ObservableRangeCollection<BookViewModel>();
 
@@ -31,30 +35,7 @@ namespace InternalLibrary.ViewModels
         {
             base.OnInitialize();
 
-            ItemModels.AddRange(new List<BookViewModel>
-            {
-                new BookViewModel()
-                {
-                    Title = "First book",
-                    InternationalStandardBookNumber = String.Empty,
-                    DateOfIssue = DateTime.Now,
-                    Location = String.Empty
-                },
-                new BookViewModel()
-                {
-                    Title = "Second book",
-                    InternationalStandardBookNumber = String.Empty,
-                    DateOfIssue = DateTime.Now,
-                    Location = String.Empty
-                },
-                new BookViewModel()
-                {
-                    Title = "Third book",
-                    InternationalStandardBookNumber = String.Empty,
-                    DateOfIssue = DateTime.Now,
-                    Location = String.Empty
-                }
-            });
+            ItemModels.AddRange(_bookRepository.GetBookList());
         }
 
         private async Task SelectItem(BookViewModel viewModel)

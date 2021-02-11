@@ -8,5 +8,13 @@ namespace InternalLibrary.Models
         public DateTime DateOfIssue { get; set; }
         public string InternationalStandardBookNumber { get; set; }
         public string Location { get; set; } = String.Empty;
+
+        public Book(string title, DateTime dateOfIssue, string internationalStandardBookNumber, string location)
+        {
+            Title = title;
+            DateOfIssue = dateOfIssue;
+            InternationalStandardBookNumber = internationalStandardBookNumber;
+            Location = location;
+        }
     }
 }
