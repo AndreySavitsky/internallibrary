@@ -1,7 +1,8 @@
 ﻿using System;
+
 using InternalLibrary.ViewModels;
+
 using Softeq.XToolkit.WhiteLabel.iOS;
-using UIKit;
 
 namespace InternalLibrary.iOS.ViewControllers
 {

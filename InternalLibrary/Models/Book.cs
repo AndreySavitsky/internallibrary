@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace InternalLibrary.Models
 {
     public class Book
