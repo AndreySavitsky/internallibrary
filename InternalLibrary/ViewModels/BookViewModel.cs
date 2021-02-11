@@ -6,15 +6,15 @@ namespace InternalLibrary.ViewModels
 {
     public class BookViewModel : ObservableObject
     {
-        private string _name = string.Empty;
+        private string _title = string.Empty;
         private DateTime _dateOfIssue = default;
         private string _internationalStandardBookNumber = string.Empty;
         private string _location = string.Empty;
 
-        public string Name
+        public string Title
         {
-            get => _name;
-            set => Set(ref _name, value);
+            get => _title;
+            set => Set(ref _title, value);
         }
 
         public DateTime DateOfIssue

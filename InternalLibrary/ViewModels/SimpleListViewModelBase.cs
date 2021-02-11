@@ -35,21 +35,21 @@ namespace InternalLibrary.ViewModels
             {
                 new BookViewModel()
                 {
-                    Name = "First book",
+                    Title = "First book",
                     InternationalStandardBookNumber = String.Empty,
                     DateOfIssue = DateTime.Now,
                     Location = String.Empty
                 },
                 new BookViewModel()
                 {
-                    Name = "Second book",
+                    Title = "Second book",
                     InternationalStandardBookNumber = String.Empty,
                     DateOfIssue = DateTime.Now,
                     Location = String.Empty
                 },
                 new BookViewModel()
                 {
-                    Name = "Third book",
+                    Title = "Third book",
                     InternationalStandardBookNumber = String.Empty,
                     DateOfIssue = DateTime.Now,
                     Location = String.Empty
@@ -59,7 +59,7 @@ namespace InternalLibrary.ViewModels
 
         private async Task SelectItem(BookViewModel viewModel)
         {
-            await _dialogsService.ShowDialogAsync(new AlertDialogConfig("Selected", viewModel.Name, "OK"));
+            await _dialogsService.ShowDialogAsync(new AlertDialogConfig("Selected", viewModel.Title, "OK"));
         }
     }
 }

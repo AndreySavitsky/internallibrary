@@ -30,7 +30,7 @@ namespace InternalLibrary.iOS.Views
         {
             base.DoAttachBindings();
 
-            this.Bind(() => ViewModel.Name, () => Title.Text);
+            this.Bind(() => ViewModel.Title, () => Title.Text);
         }
     }
 }
