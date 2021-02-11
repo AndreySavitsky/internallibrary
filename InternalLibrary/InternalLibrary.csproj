@@ -18,6 +18,7 @@
    </ItemGroup>
    <ItemGroup>
      <Compile Remove="Properties\AssemblyInfo.cs" />
+     <Compile Remove="MyClass.cs" />
    </ItemGroup>
    <ItemGroup>
      <None Remove="project.nuget.cache" />
