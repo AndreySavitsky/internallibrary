@@ -1,7 +1,9 @@
 ﻿using System;
 
+using InternalLibrary.iOS.Views;
 using InternalLibrary.ViewModels;
 
+using Softeq.XToolkit.Bindings.iOS.Bindable;
 using Softeq.XToolkit.WhiteLabel.iOS;
 
 namespace InternalLibrary.iOS.ViewControllers
@@ -17,12 +19,13 @@ namespace InternalLibrary.iOS.ViewControllers
         {
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
-        }
 
-        public override void DidReceiveMemoryWarning()
-        {
-            base.DidReceiveMemoryWarning();
-            // Release any cached data, images, etc that aren't in use.
+            TableView.RegisterNibForCellReuse(BookTableViewCell.Nib, BookTableViewCell.Key);
+            TableView.Source = new BindableTableViewSource<BookViewModel, BookTableViewCell>(TableView, ViewModel.ItemModels)
+            {
+                HeightForRow = 60,
+                ItemClick = ViewModel.SelectItemCommand
+            };
         }
     }
 }
