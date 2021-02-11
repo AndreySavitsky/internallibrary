@@ -129,7 +129,6 @@
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="ViewControllers\BookListStoryboard.storyboard" />
-    <InterfaceDefinition Include="Main.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -143,8 +142,6 @@
     <Compile Include="ViewControllers\BookListViewController.designer.cs">
       <DependentUpon>BookListViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewController.cs" />
-    <Compile Include="ViewController.designer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
