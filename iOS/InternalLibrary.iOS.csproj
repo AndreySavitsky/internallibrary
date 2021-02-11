@@ -125,10 +125,12 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="ViewControllers\" />
+    <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="ViewControllers\BookListStoryboard.storyboard" />
+    <InterfaceDefinition Include="Views\BookTableViewCell.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -141,6 +143,10 @@
     <Compile Include="ViewControllers\BookListViewController.cs" />
     <Compile Include="ViewControllers\BookListViewController.designer.cs">
       <DependentUpon>BookListViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BookTableViewCell.cs" />
+    <Compile Include="Views\BookTableViewCell.designer.cs">
+      <DependentUpon>BookTableViewCell.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
