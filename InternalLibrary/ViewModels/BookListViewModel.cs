@@ -1,15 +1,17 @@
 ﻿using System;
 
-using Softeq.XToolkit.WhiteLabel.Mvvm;
 using Softeq.XToolkit.WhiteLabel.Navigation;
 
 namespace InternalLibrary.ViewModels
 {
-    public class BookListViewModel : ViewModelBase
+    public class BookListViewModel : SimpleListViewModelBase
     {
         private readonly IPageNavigationService _pageNavigationService;
 
-        public BookListViewModel(IPageNavigationService pageNavigationService)
+        public BookListViewModel(
+            IPageNavigationService pageNavigationService,
+            IDialogsService dialogsService)
+            : base(dialogsService)
         {
             _pageNavigationService = pageNavigationService;
         }
