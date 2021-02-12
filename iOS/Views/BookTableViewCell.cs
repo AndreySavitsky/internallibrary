@@ -2,16 +2,16 @@
 
 using Foundation;
 
-using InternalLibrary.ViewModels;
-
 using Softeq.XToolkit.Bindings.iOS.Bindable;
 using Softeq.XToolkit.Bindings.Extensions;
 
 using UIKit;
 
+using InternalLibrary.Models;
+
 namespace InternalLibrary.iOS.Views
 {
-    public partial class BookTableViewCell : BindableTableViewCell<BookViewModel>
+    public partial class BookTableViewCell : BindableTableViewCell<Book>
     {
         public static readonly NSString Key = new NSString("BookTableViewCell");
         public static readonly UINib Nib;

@@ -1,20 +1,16 @@
 ﻿using System;
+using Softeq.XToolkit.Common;
 
 namespace InternalLibrary.Models
 {
-    public class Book
+    public class Book : ObservableObject
     {
-        public string Title { get; set; }
-        public DateTime DateOfIssue { get; set; }
-        public string InternationalStandardBookNumber { get; set; }
-        public string Location { get; set; } = String.Empty;
+        private string _title = string.Empty;
 
-        public Book(string title, DateTime dateOfIssue, string internationalStandardBookNumber, string location)
+        public string Title
         {
-            Title = title;
-            DateOfIssue = dateOfIssue;
-            InternationalStandardBookNumber = internationalStandardBookNumber;
-            Location = location;
+            get => _title;
+            set => Set(ref _title, value);
         }
     }
 }

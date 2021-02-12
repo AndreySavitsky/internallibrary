@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using InternalLibrary.Models;
 using InternalLibrary.Services;
 using Softeq.XToolkit.Common.Collections;
 using Softeq.XToolkit.Common.Commands;
@@ -22,14 +23,14 @@ namespace InternalLibrary.ViewModels
             _dialogsService = dialogsService;
             _bookRepository = bookRepository;
 
-            ItemModels = new ObservableRangeCollection<BookViewModel>();
+            ItemModels = new ObservableRangeCollection<Book>();
 
-            SelectItemCommand = new AsyncCommand<BookViewModel>(SelectItem);
+            SelectItemCommand = new AsyncCommand<Book>(SelectItem);
         }
 
-        public ObservableRangeCollection<BookViewModel> ItemModels { get; }
+        public ObservableRangeCollection<Book> ItemModels { get; }
 
-        public ICommand<BookViewModel> SelectItemCommand { get; }
+        public ICommand<Book> SelectItemCommand { get; }
 
         public override async void OnInitialize()
         {
@@ -38,7 +39,7 @@ namespace InternalLibrary.ViewModels
             ItemModels.AddRange(await _bookRepository.GetBookListAsync());
         }
 
-        private async Task SelectItem(BookViewModel viewModel)
+        private async Task SelectItem(Book viewModel)
         {
             await _dialogsService.ShowDialogAsync(new AlertDialogConfig("Selected", viewModel.Title, "OK"));
         }
