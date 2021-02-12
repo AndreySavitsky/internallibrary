@@ -18,11 +18,20 @@ namespace InternalLibrary.iOS.ViewControllers
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel Label { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField Title { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
             if (Label != null) {
                 Label.Dispose ();
                 Label = null;
+            }
+
+            if (Title != null) {
+                Title.Dispose ();
+                Title = null;
             }
         }
     }
