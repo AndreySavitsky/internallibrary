@@ -132,7 +132,6 @@
     <InterfaceDefinition Include="ViewControllers\BookListStoryboard.storyboard" />
     <InterfaceDefinition Include="Views\BookTableViewCell.xib" />
     <InterfaceDefinition Include="ViewControllers\BookStoryboard.storyboard" />
-    <InterfaceDefinition Include="ViewControllers\BookViewController.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
