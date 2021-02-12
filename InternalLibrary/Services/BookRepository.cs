@@ -29,6 +29,7 @@ namespace InternalLibrary.Services
 
             books.Clear();
             books.AddRange(root.Feed.Entry.Select(x => new Book() { Title = x.Title.Text }));
+            books.RemoveAt(0);
 
             return books;
         }
