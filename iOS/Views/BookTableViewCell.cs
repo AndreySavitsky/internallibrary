@@ -2,12 +2,13 @@
 
 using Foundation;
 
-using Softeq.XToolkit.Bindings.iOS.Bindable;
+using InternalLibrary.Models;
+
 using Softeq.XToolkit.Bindings.Extensions;
+using Softeq.XToolkit.Bindings.iOS.Bindable;
 
 using UIKit;
 
-using InternalLibrary.Models;
 
 namespace InternalLibrary.iOS.Views
 {

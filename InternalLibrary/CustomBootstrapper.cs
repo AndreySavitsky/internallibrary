@@ -8,7 +8,6 @@ namespace InternalLibrary
     {
         public static void Configure(IContainerBuilder builder)
         {
-            // Playground
             builder.Singleton<BookRepository, IBookRepository>();
         }
     }

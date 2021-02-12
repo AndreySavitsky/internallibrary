@@ -1,5 +1,4 @@
-﻿using System;
-using Softeq.XToolkit.Common;
+﻿using Softeq.XToolkit.Common;
 
 namespace InternalLibrary.Models
 {

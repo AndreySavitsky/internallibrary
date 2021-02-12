@@ -2,7 +2,6 @@
 using System.Threading.Tasks;
 
 using InternalLibrary.Models;
-using InternalLibrary.ViewModels;
 
 namespace InternalLibrary.Services
 {
