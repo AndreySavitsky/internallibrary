@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 using InternalLibrary.ViewModels;
 
@@ -7,7 +8,7 @@ namespace InternalLibrary.Services
 {
     public class BookRepository : IBookRepository
     {
-        public IEnumerable<BookViewModel> GetBookList()
+        public async Task<IEnumerable<BookViewModel>> GetBookListAsync()
         {
             return new List<BookViewModel>
             {

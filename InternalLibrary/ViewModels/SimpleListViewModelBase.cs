@@ -31,11 +31,11 @@ namespace InternalLibrary.ViewModels
 
         public ICommand<BookViewModel> SelectItemCommand { get; }
 
-        public override void OnInitialize()
+        public override async void OnInitialize()
         {
             base.OnInitialize();
 
-            ItemModels.AddRange(_bookRepository.GetBookList());
+            ItemModels.AddRange(await _bookRepository.GetBookListAsync());
         }
 
         private async Task SelectItem(BookViewModel viewModel)
