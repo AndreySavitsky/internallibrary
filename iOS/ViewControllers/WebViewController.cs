@@ -18,9 +18,6 @@ namespace InternalLibrary.iOS.ViewControllers
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
 
-            //WKWebView webView = new WKWebView(View.Frame, new WKWebViewConfiguration());
-            //View.AddSubview(webView);
-
             var url = new NSUrl(ViewModel.URL);
             var request = new NSUrlRequest(url);
             WebView.LoadRequest(request);
