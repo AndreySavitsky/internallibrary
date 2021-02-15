@@ -14,8 +14,16 @@ namespace InternalLibrary.iOS.ViewControllers
     [Register ("WebViewController")]
     partial class WebViewController
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIWebView WebView { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
+            if (WebView != null) {
+                WebView.Dispose ();
+                WebView = null;
+            }
         }
     }
 }
