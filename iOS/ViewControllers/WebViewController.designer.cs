@@ -11,19 +11,11 @@ using UIKit;
 
 namespace InternalLibrary.iOS.ViewControllers
 {
-    [Register ("BookViewController")]
-    partial class BookViewController
+    [Register ("WebViewController")]
+    partial class WebViewController
     {
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel Label { get; set; }
-
         void ReleaseDesignerOutlets ()
         {
-            if (Label != null) {
-                Label.Dispose ();
-                Label = null;
-            }
         }
     }
 }

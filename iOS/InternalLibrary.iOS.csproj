@@ -135,6 +135,7 @@
     <InterfaceDefinition Include="ViewControllers\BookListStoryboard.storyboard" />
     <InterfaceDefinition Include="Views\BookTableViewCell.xib" />
     <InterfaceDefinition Include="ViewControllers\BookStoryboard.storyboard" />
+    <InterfaceDefinition Include="ViewControllers\WebStoryboard.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -156,6 +157,10 @@
     <Compile Include="ViewControllers\BookViewController.cs" />
     <Compile Include="ViewControllers\BookViewController.designer.cs">
       <DependentUpon>BookViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\WebViewController.cs" />
+    <Compile Include="ViewControllers\WebViewController.designer.cs">
+      <DependentUpon>WebViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

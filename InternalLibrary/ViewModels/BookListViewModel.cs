@@ -41,8 +41,8 @@ namespace InternalLibrary.ViewModels
         private async Task SelectItem(Book model)
         {
             _pageNavigationService
-                .For<BookViewModel>()
-                .WithParam(x => x.Book, model)
+                .For<WebViewModel>()
+                .WithParam(x => x.URL, model.URL)
                 .Navigate();
         }
     }
