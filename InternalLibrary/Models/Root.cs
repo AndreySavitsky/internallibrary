@@ -26,6 +26,8 @@ namespace InternalLibrary.Models
         public Location Location { get; set; }
         [JsonProperty("gsx$_cn6ca")]
         public Id Id { get; set; }
+        [JsonProperty("gsx$_ciyn3")]
+        public Link Link { get; set; }
     }
 
     public class Title
@@ -53,6 +55,12 @@ namespace InternalLibrary.Models
     }
 
     public class Id
+    {
+        [JsonProperty("$t")]
+        public string Text { get; set; }
+    }
+
+    public class Link
     {
         [JsonProperty("$t")]
         public string Text { get; set; }
