@@ -15,6 +15,10 @@ namespace InternalLibrary.iOS.Views
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel ISBN { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel Status { get; set; }
 
         [Outlet]
@@ -23,6 +27,11 @@ namespace InternalLibrary.iOS.Views
 
         void ReleaseDesignerOutlets ()
         {
+            if (ISBN != null) {
+                ISBN.Dispose ();
+                ISBN = null;
+            }
+
             if (Status != null) {
                 Status.Dispose ();
                 Status = null;

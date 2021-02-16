@@ -33,6 +33,7 @@ namespace InternalLibrary.iOS.Views
 
             this.Bind(() => ViewModel.Title, () => Title.Text);
             this.Bind(() => ViewModel.Status, () => Status.Text);
+            this.Bind(() => ViewModel.InternationalStandardBookNumber, () => ISBN.Text);
 
             if (ViewModel.Status != null)
             {
