@@ -32,6 +32,12 @@ namespace InternalLibrary.iOS.Views
             base.DoAttachBindings();
 
             this.Bind(() => ViewModel.Title, () => Title.Text);
+            this.Bind(() => ViewModel.Status, () => Status.Text);
+
+            if (ViewModel.Status != null)
+            {
+                Status.TextColor = new UIColor(255, 0, 0, 255);
+            }
         }
     }
 }

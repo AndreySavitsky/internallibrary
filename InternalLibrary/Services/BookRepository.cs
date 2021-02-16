@@ -28,8 +28,9 @@ namespace InternalLibrary.Services
             Root root = JsonConvert.DeserializeObject<Root>(result);
 
             books.Clear();
-            books.AddRange(root.Feed.Entry.Select(x => new Book() { Title = x.Title.Text, URL = x.URL?.Text }));
+            books.AddRange(root.Feed.Entry.Select(x => new Book() { Title = x.Title.Text, URL = x.URL?.Text, Status = x.Location?.Text }));
             books.RemoveAt(0);
+            books.RemoveAt(books.Count - 1);
 
             return books;
         }

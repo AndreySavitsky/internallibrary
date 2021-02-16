@@ -6,6 +6,7 @@ namespace InternalLibrary.Models
     {
         private string _title = string.Empty;
         private string _url = string.Empty;
+        private string _status = string.Empty;
 
         public string Title
         {
@@ -17,6 +18,12 @@ namespace InternalLibrary.Models
         {
             get => _url;
             set => Set(ref _url, value);
+        }
+
+        public string Status
+        {
+            get => _status;
+            set => Set(ref _status, value);
         }
     }
 }

@@ -24,7 +24,7 @@ namespace InternalLibrary.iOS.ViewControllers
             TableView.RegisterNibForCellReuse(BookTableViewCell.Nib, BookTableViewCell.Key);
             TableView.Source = new BindableTableViewSource<Book, BookTableViewCell>(TableView, ViewModel.ItemModels)
             {
-                HeightForRow = 60,
+                HeightForRow = 90,
                 ItemClick = ViewModel.SelectItemCommand
             };
         }

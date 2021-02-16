@@ -15,10 +15,19 @@ namespace InternalLibrary.iOS.Views
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel Status { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel Title { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
+            if (Status != null) {
+                Status.Dispose ();
+                Status = null;
+            }
+
             if (Title != null) {
                 Title.Dispose ();
                 Title = null;
