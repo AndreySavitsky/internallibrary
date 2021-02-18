@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
 
+using InternalLibrary.iOS.Services;
+using InternalLibrary.Services;
+
 using Softeq.XToolkit.Common.Extensions;
 using Softeq.XToolkit.WhiteLabel.Bootstrapper.Abstract;
 using Softeq.XToolkit.WhiteLabel.Interfaces;
@@ -22,6 +25,8 @@ namespace InternalLibrary.iOS
         {
             // core
             CustomBootstrapper.Configure(builder);
+
+            builder.Singleton<IosGoogleAPIConfiguration, IGoogleAPIConfoguration>();
 
             builder.Singleton<IosAppInfoService, IAppInfoService>();
 
