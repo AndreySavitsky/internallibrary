@@ -9,6 +9,7 @@ namespace InternalLibrary
         public static void Configure(IContainerBuilder builder)
         {
             builder.Singleton<BookRepository, IBookRepository>();
+            builder.Singleton<GoogleAuthenticator, IGoogleAuthenticator>();
         }
     }
 }
