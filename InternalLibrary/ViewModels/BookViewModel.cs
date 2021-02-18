@@ -1,7 +1,5 @@
 ﻿using InternalLibrary.Models;
-using InternalLibrary.Services;
 using Softeq.XToolkit.WhiteLabel.Mvvm;
-using Softeq.XToolkit.WhiteLabel.Navigation;
 
 namespace InternalLibrary.ViewModels
 {
