@@ -10,6 +10,8 @@ using Softeq.XToolkit.WhiteLabel.Droid;
 
 using System;
 
+using Xamarin.Auth;
+
 namespace InternalLibrary.Droid
 {
     [Activity(Label = "GoogleAuthInterceptor")]
@@ -24,12 +26,10 @@ namespace InternalLibrary.Droid
             },
             DataSchemes = new[]
             {
-                // First part of the redirect url (Package name)
                 "com.softeq.internallibrary"
             },
             DataPaths = new[]
             {
-                // Second part of the redirect url (Path)
                 "/oauth2redirect"
             }
         )
@@ -39,6 +39,8 @@ namespace InternalLibrary.Droid
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+
+            CustomTabsConfiguration.CustomTabsClosingMessage = null;
 
             Android.Net.Uri uri_android = Intent.Data;
 
