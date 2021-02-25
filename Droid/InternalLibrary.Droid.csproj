@@ -334,6 +334,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AndroidGoogleAPIConfiguration.cs" />
     <Compile Include="GoogleAuthInterceptor.cs" />
+    <Compile Include="Views\BookListPageActivity.cs" />
+    <Compile Include="CustomDroidBootstrapper.cs" />
+    <Compile Include="MainApplication.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
