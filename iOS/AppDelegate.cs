@@ -4,7 +4,7 @@ using Foundation;
 
 using InternalLibrary.Services;
 using InternalLibrary.ViewModels;
-
+using Softeq.XToolkit.WhiteLabel;
 using Softeq.XToolkit.WhiteLabel.Bootstrapper;
 using Softeq.XToolkit.WhiteLabel.Bootstrapper.Abstract;
 using Softeq.XToolkit.WhiteLabel.iOS;
@@ -42,7 +42,7 @@ namespace InternalLibrary.iOS
         {
             var uri_netfx = new Uri(url.AbsoluteString);
 
-            _container.Resolve<IGoogleAuthenticator>().OnPageLoading(uri_netfx);
+            Dependencies.Container.Resolve<IGoogleAuthenticator>().OnPageLoading(uri_netfx);
 
             return true;
         }
