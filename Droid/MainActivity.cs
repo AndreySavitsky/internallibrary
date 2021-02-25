@@ -1,11 +1,13 @@
 ﻿using Android.App;
 using Android.Widget;
 using Android.OS;
+using Softeq.XToolkit.WhiteLabel.Droid;
+using InternalLibrary.ViewModels;
 
 namespace InternalLibrary.Droid
 {
-    [Activity(Label = "internallibrary", MainLauncher = true, Icon = "@mipmap/icon")]
-    public class MainActivity : Activity
+    [Activity(Label = "internallibrary", MainLauncher = true, Icon = "@mipmap/icon", Theme = "@style/AppTheme")]
+    public class MainActivity : ActivityBase<MainViewModel>
     {
         int count = 1;
 
