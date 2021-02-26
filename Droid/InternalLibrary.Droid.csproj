@@ -337,6 +337,7 @@
     <Compile Include="CustomDroidBootstrapper.cs" />
     <Compile Include="MainApplication.cs" />
     <Compile Include="Views\BookListViewHolder.cs" />
+    <Compile Include="Views\WebPageActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -364,6 +365,10 @@
       <Generator></Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\item_book.xml">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\web_page.xml">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>

@@ -10990,6 +10990,9 @@ namespace InternalLibrary.Droid
 			// aapt resource value: 0x7F0B0076
 			public const int text_view_with_theme_line_height = 2131427446;
 			
+			// aapt resource value: 0x7F0B0078
+			public const int web_page = 2131427448;
+			
 			static Layout()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
