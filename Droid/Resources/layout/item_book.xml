@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="75dp"
+    android:paddingHorizontal="15dp"
+    android:paddingVertical="5dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/item_book_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:text="Label" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="bottom">
+        <TextView
+            android:id="@+id/item_book_isbn"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="ISBN" />
+
+        <TextView
+            android:id="@+id/item_book_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:text="Status" />
+    </LinearLayout>
+    
+
+</LinearLayout>
