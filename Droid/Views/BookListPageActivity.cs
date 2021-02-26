@@ -1,9 +1,10 @@
 ﻿using Android.App;
 using Android.Content;
 using Android.OS;
-
+using AndroidX.RecyclerView.Widget;
+using InternalLibrary.Models;
 using InternalLibrary.ViewModels;
-
+using Softeq.XToolkit.Bindings.Droid.Bindable;
 using Softeq.XToolkit.WhiteLabel.Droid;
 
 namespace InternalLibrary.Droid.Views
@@ -11,6 +12,8 @@ namespace InternalLibrary.Droid.Views
     [Activity(Label = "Book list", MainLauncher = true, Theme = "@style/AppTheme")]
     public class BookListPageActivity : ActivityBase<BookListViewModel>
     {
+        private RecyclerView? _booklist;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -32,7 +35,19 @@ namespace InternalLibrary.Droid.Views
 
             if (e.IsAuthenticated)
             {
+                SetContentView(Resource.Layout.booklist);
 
+                _booklist = FindViewById<RecyclerView>(Resource.Id.booklist);
+
+                _booklist.SetLayoutManager(new LinearLayoutManager(this));
+
+                var adapter = new BindableRecyclerViewAdapter<Book, BookListViewHolder>(
+                ViewModel.ItemModels)
+                {
+                    ItemClick = ViewModel.SelectItemCommand
+                };
+
+                _booklist.SetAdapter(adapter);
             }
             else
             {

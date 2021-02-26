@@ -2,7 +2,6 @@
 using Foundation;
 using InternalLibrary.ViewModels;
 using Softeq.XToolkit.WhiteLabel.iOS;
-using WebKit;
 
 namespace InternalLibrary.iOS.ViewControllers
 {
