@@ -17,12 +17,14 @@ namespace InternalLibrary.Droid.Views
         {
             base.OnCreate(savedInstanceState);
 
+            Title = ViewModel.Book.Title;
+
             SetContentView(Resource.Layout.web_page);
 
             _webview = FindViewById<WebView>(Resource.Id.webview);
             _webview.Settings.JavaScriptEnabled = true;
             _webview.SetWebViewClient(new WebViewClient());
-            _webview.LoadUrl(ViewModel.URL);
+            _webview.LoadUrl(ViewModel.Book.URL);
         }
     }
 }

@@ -61,7 +61,7 @@ namespace InternalLibrary.ViewModels
         {
             _pageNavigationService
                 .For<WebViewModel>()
-                .WithParam(x => x.URL, model.URL)
+                .WithParam(x => x.Book, model)
                 .Navigate();
         }
     }

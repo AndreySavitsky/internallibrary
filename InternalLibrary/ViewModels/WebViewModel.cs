@@ -1,9 +1,10 @@
-﻿using Softeq.XToolkit.WhiteLabel.Mvvm;
+﻿using InternalLibrary.Models;
+using Softeq.XToolkit.WhiteLabel.Mvvm;
 
 namespace InternalLibrary.ViewModels
 {
     public class WebViewModel : ViewModelBase
     {
-        public string URL { get; set; }
+        public Book Book { get; set; }
     }
 }

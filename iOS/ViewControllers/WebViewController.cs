@@ -17,7 +17,7 @@ namespace InternalLibrary.iOS.ViewControllers
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
 
-            var url = new NSUrl(ViewModel.URL);
+            var url = new NSUrl(ViewModel.Book.URL);
             var request = new NSUrlRequest(url);
             WebView.LoadRequest(request);
         }
