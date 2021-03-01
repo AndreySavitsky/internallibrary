@@ -338,6 +338,7 @@
     <Compile Include="MainApplication.cs" />
     <Compile Include="Views\BookListViewHolder.cs" />
     <Compile Include="Views\WebPageActivity.cs" />
+    <Compile Include="Views\SplashActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -369,6 +370,10 @@
       <Generator></Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\web_page.xml">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\background_splash.xml">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>

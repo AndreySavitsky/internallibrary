@@ -9,7 +9,7 @@ using Softeq.XToolkit.WhiteLabel.Droid;
 
 namespace InternalLibrary.Droid.Views
 {
-    [Activity(Label = "Book list", MainLauncher = true, Theme = "@style/AppTheme")]
+    [Activity(Label = "Book list", Theme = "@style/AppTheme")]
     public class BookListPageActivity : ActivityBase<BookListViewModel>
     {
         private RecyclerView? _booklist;
