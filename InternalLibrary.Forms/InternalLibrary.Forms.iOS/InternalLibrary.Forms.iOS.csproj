@@ -69,6 +69,7 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="IosBootstrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -131,6 +132,18 @@
     <ProjectReference Include="..\InternalLibrary.Forms\InternalLibrary.Forms.csproj">
       <Project>{2767DAE9-4E16-45FB-925E-3F5E830B516A}</Project>
       <Name>InternalLibrary.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\XToolkit.WhiteLabel\Softeq.XToolkit.WhiteLabel.Forms\Softeq.XToolkit.WhiteLabel.Forms.csproj">
+      <Project>{4ED636C3-CDEA-4AC6-B893-855DEB532AC7}</Project>
+      <Name>Softeq.XToolkit.WhiteLabel.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\XToolkit.WhiteLabel\Softeq.XToolkit.WhiteLabel\Softeq.XToolkit.WhiteLabel.csproj">
+      <Project>{8CB59AF4-4B0F-414B-926A-3C5380135437}</Project>
+      <Name>Softeq.XToolkit.WhiteLabel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\XToolkit.WhiteLabel\Softeq.XToolkit.Common\Softeq.XToolkit.Common.csproj">
+      <Project>{990783C7-8CCB-4648-A89C-E8189995F780}</Project>
+      <Name>Softeq.XToolkit.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

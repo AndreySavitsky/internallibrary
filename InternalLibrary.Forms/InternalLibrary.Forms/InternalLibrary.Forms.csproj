@@ -9,4 +9,7 @@
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\XToolkit.WhiteLabel\Softeq.XToolkit.WhiteLabel.Forms\Softeq.XToolkit.WhiteLabel.Forms.csproj" />
+  </ItemGroup>
 </Project>

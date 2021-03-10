@@ -1,28 +1,25 @@
-﻿using System;
+﻿using Softeq.XToolkit.WhiteLabel.Bootstrapper;
+using Softeq.XToolkit.WhiteLabel.Bootstrapper.Abstract;
+using Softeq.XToolkit.WhiteLabel.Navigation;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace InternalLibrary.Forms
 {
-    public partial class App : Application
+    public partial class App
     {
-        public App()
+        public App(IBootstrapper bootstrapper)
+            : base(bootstrapper)
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage());
         }
 
-        protected override void OnStart()
+        protected override void OnStarted(IContainer container)
         {
-        }
+            base.OnStarted(container);
 
-        protected override void OnSleep()
-        {
-        }
-
-        protected override void OnResume()
-        {
+            var navigationService = container.Resolve<IPageNavigationService>();
+            navigationService.Initialize(Current.MainPage.Navigation);
         }
     }
 }
