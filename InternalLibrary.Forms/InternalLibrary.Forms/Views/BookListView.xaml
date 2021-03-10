@@ -2,7 +2,10 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="InternalLibrary.Forms.Views.BookListView">
+    xmlns:vm="clr-namespace:InternalLibrary.Forms.ViewModels"
+    x:Class="InternalLibrary.Forms.Views.BookListView"
+    x:DataType="vm:BookListViewModel"
+    Title="{Binding Title}">
     <ContentPage.Content>
         <Label Text="Text"/>
     </ContentPage.Content>
