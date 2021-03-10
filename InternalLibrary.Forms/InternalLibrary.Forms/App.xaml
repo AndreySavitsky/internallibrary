@@ -1,8 +1,18 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="InternalLibrary.Forms.App">
-    <Application.Resources>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms:FormsApp
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:forms="clr-namespace:Softeq.XToolkit.WhiteLabel.Forms;assembly=Softeq.XToolkit.WhiteLabel.Forms"
+    xmlns:converters="clr-namespace:Softeq.XToolkit.WhiteLabel.Forms.Converters;assembly=Softeq.XToolkit.WhiteLabel.Forms"
+    mc:Ignorable="d"
+    x:Class="InternalLibrary.Forms.App">
+    <forms:FormsApp.Resources>
 
-    </Application.Resources>
-</Application>
+        <ResourceDictionary>
+            <converters:BooleanInverseConverter x:Key="InverseConverter" />
+        </ResourceDictionary>
+
+    </forms:FormsApp.Resources>
+</forms:FormsApp>
