@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using InternalLibrary.Forms.Servsices;
+using InternalLibrary.Forms.ViewModels;
 using Softeq.XToolkit.WhiteLabel.Bootstrapper.Abstract;
 using Softeq.XToolkit.WhiteLabel.Forms;
+using Softeq.XToolkit.WhiteLabel.Forms.Navigation;
 using Xamarin.Forms;
 
 namespace InternalLibrary.Forms
@@ -24,7 +27,9 @@ namespace InternalLibrary.Forms
 
         protected override void ConfigureIoc(IContainerBuilder builder)
         {
+            builder.PerDependency<BookListViewModel>();
 
+            builder.Singleton<InternalLibraryViewLocator, IFormsViewLocator>(IfRegistered.Replace);
         }
     }
 }
