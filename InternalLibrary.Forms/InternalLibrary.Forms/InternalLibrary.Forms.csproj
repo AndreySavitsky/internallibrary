@@ -11,8 +11,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\XToolkit.WhiteLabel\Softeq.XToolkit.WhiteLabel.Forms\Softeq.XToolkit.WhiteLabel.Forms.csproj" />
+    <ProjectReference Include="..\..\XToolkit.WhiteLabel\Softeq.XToolkit.WhiteLabel\Softeq.XToolkit.WhiteLabel.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Servsices\" />
   </ItemGroup>
 </Project>

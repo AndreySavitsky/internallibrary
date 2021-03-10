@@ -1,4 +1,5 @@
-﻿using InternalLibrary.Forms.Views;
+﻿using InternalLibrary.Forms.ViewModels;
+using InternalLibrary.Forms.Views;
 using Softeq.XToolkit.WhiteLabel.Bootstrapper;
 using Softeq.XToolkit.WhiteLabel.Bootstrapper.Abstract;
 using Softeq.XToolkit.WhiteLabel.Navigation;
@@ -12,7 +13,7 @@ namespace InternalLibrary.Forms
             : base(bootstrapper)
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new BookListView());
+            MainPage = new NavigationPage(new StartView());
         }
 
         protected override void OnStarted(IContainer container)
@@ -21,6 +22,10 @@ namespace InternalLibrary.Forms
 
             var navigationService = container.Resolve<IPageNavigationService>();
             navigationService.Initialize(Current.MainPage.Navigation);
+
+            navigationService.For<BookListViewModel>()
+                .WithParam(vm => vm.Title, "Book list")
+                .Navigate(true);
         }
     }
 }
