@@ -30,6 +30,8 @@ namespace InternalLibrary.Forms
             builder.PerDependency<BookListViewModel>();
 
             builder.Singleton<InternalLibraryViewLocator, IFormsViewLocator>(IfRegistered.Replace);
+
+            builder.Singleton<WebAuthenticatorService, IWebAuthenticatorService>();
         }
     }
 }
