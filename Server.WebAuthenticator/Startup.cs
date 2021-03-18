@@ -34,6 +34,7 @@ namespace Server.WebAuthenticator
                 {
                     g.ClientId = "1080092356389-bt65r6clcof1a05smp4kp6k7uut9nm4d.apps.googleusercontent.com";
                     g.ClientSecret = "wBEzcKCZPwxfnQYNKWDVTBZ8";
+                    g.Scope.Add("https://www.googleapis.com/auth/spreadsheets");
                     g.SaveTokens = true;
                 });
 
