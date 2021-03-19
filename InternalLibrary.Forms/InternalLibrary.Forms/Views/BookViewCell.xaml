@@ -6,8 +6,18 @@
     x:Class="InternalLibrary.Forms.Views.BookViewCell"
     x:DataType="model:Book">
         <ViewCell.View>
-            <StackLayout>
-                <Label Text="{Binding Title}"/>
+            <StackLayout Margin="10">
+                <Label
+                        Text="{Binding Title}"
+                        Style="{StaticResource BookTitleTextStyle}"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Label
+                        Text="{Binding InternationalStandardBookNumber}"
+                        Style="{StaticResource BookISBNTextStyle}"/>
+                    <Label
+                        Text="{Binding Status}"
+                        Style="{StaticResource BookStatusTextStyle}"/>
+                </StackLayout>
             </StackLayout>
         </ViewCell.View>
 </ViewCell>
