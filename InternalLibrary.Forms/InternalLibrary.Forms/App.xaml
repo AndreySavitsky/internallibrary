@@ -12,6 +12,22 @@
 
         <ResourceDictionary>
             <converters:BooleanInverseConverter x:Key="InverseConverter" />
+
+            <Style x:Key="BookTitleTextStyle" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+
+            <Style x:Key="BookISBNTextStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="Micro"/>
+                <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+            </Style>
+
+            <Style x:Key="BookStatusTextStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="Micro"/>
+                <Setter Property="TextColor" Value="Red"/>
+                <Setter Property="HorizontalOptions" Value="EndAndExpand"/>
+            </Style>
+
         </ResourceDictionary>
 
     </forms:FormsApp.Resources>
