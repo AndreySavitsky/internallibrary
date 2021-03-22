@@ -1,9 +1,8 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
-<ContentPage
+﻿<ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="InternalLibrary.Forms.Views.BookView">
     <ContentPage.Content>
-        <Label Text="Text"/>
+        <WebView Source="{Binding Book.URL}"/>
     </ContentPage.Content>
 </ContentPage>
