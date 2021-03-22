@@ -13,6 +13,7 @@ namespace InternalLibrary.Forms.ViewModels
         private readonly IBookRepository _bookRepository;
 
         private string _title = string.Empty;
+        private Book _book;
 
         public BookListViewModel(
             IPageNavigationService pageNavigationService,
@@ -32,6 +33,18 @@ namespace InternalLibrary.Forms.ViewModels
         {
             get => _title;
             set => Set(ref _title, value);
+        }
+
+        public Book SelectedBook
+        {
+            get => _book;
+            set
+            {
+                Set(ref _book, value);
+                _pageNavigationService.For<BookViewModel>()
+                    .WithParam(x => x.Book, value)
+                    .Navigate();
+            }
         }
 
         public ObservableRangeCollection<Book> BookList { get; }
