@@ -28,6 +28,7 @@ namespace InternalLibrary.Forms
         protected override void ConfigureIoc(IContainerBuilder builder)
         {
             builder.PerDependency<BookListViewModel>();
+            builder.PerDependency<BookViewModel>();
 
             builder.Singleton<InternalLibraryViewLocator, IFormsViewLocator>(IfRegistered.Replace);
 

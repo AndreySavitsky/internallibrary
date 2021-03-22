@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using InternalLibrary.Forms.Models;
+﻿using InternalLibrary.Forms.Models;
 using InternalLibrary.Forms.Servsices;
 using Softeq.XToolkit.Common.Collections;
 using Softeq.XToolkit.WhiteLabel.Mvvm;
