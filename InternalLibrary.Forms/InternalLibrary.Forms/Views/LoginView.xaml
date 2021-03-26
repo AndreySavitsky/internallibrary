@@ -1,0 +1,31 @@
+﻿<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="InternalLibrary.Forms.Views.LoginView"
+    Title="{Binding Title}">
+    <ContentPage.Content>
+        <StackLayout
+            Margin="20"
+            VerticalOptions="CenterAndExpand">
+
+            <Entry Placeholder="Email"
+                   Text="{Binding Email}"/>
+            <Entry Placeholder="Password"
+                   Text="{Binding Password}"
+                   IsPassword="True"/>
+
+            <StackLayout
+                Orientation="Horizontal"
+                HorizontalOptions="FillAndExpand">
+
+                <Button Text="SignIn"
+                        Command="{Binding SignInCommand}"
+                        HorizontalOptions="StartAndExpand"/>
+                <Button Text="SignUp"
+                        Command="{Binding SignUpCommand}"
+                        HorizontalOptions="End"/>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
