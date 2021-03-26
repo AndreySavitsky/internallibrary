@@ -23,8 +23,8 @@ namespace InternalLibrary.Forms
             var navigationService = container.Resolve<IPageNavigationService>();
             navigationService.Initialize(Current.MainPage.Navigation);
 
-            navigationService.For<BookListViewModel>()
-                .WithParam(vm => vm.Title, "Book list")
+            navigationService.For<LoginViewModel>()
+                .WithParam(vm => vm.Title, "Login")
                 .Navigate(true);
         }
     }

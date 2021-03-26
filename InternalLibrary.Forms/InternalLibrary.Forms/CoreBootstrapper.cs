@@ -29,11 +29,12 @@ namespace InternalLibrary.Forms
         {
             builder.PerDependency<BookListViewModel>();
             builder.PerDependency<BookViewModel>();
+            builder.PerDependency<LoginViewModel>();
 
             builder.Singleton<InternalLibraryViewLocator, IFormsViewLocator>(IfRegistered.Replace);
 
+            builder.Singleton<FirebaseAuthenticator, IFirebaseAuthenticator>();
             builder.Singleton<WebAuthenticatorService, IWebAuthenticatorService>();
-
             builder.Singleton<BookRepository, IBookRepository>();
         }
     }
