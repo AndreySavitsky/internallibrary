@@ -50,7 +50,14 @@ namespace InternalLibrary.Forms.ViewModels
 
         private async Task OnCreateAccount()
         {
-            var token = await _firebaseAuthenticator.SignUpAsync(Email, Password);
+            if(Password.Equals(ConfirmPassword))
+            {
+                var token = await _firebaseAuthenticator.SignUpAsync(Email, Password);
+            }
+            else
+            {
+                await App.Current.MainPage.DisplayAlert("Error", "Passwords are not equal", "Ok");
+            }
         }
     }
 }
