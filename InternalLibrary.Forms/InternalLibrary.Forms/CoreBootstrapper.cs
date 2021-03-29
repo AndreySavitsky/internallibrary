@@ -31,7 +31,6 @@ namespace InternalLibrary.Forms
             builder.PerDependency<SignUpViewModel>();
             builder.PerDependency<BookListViewModel>();
             builder.PerDependency<BookViewModel>();
-            builder.PerDependency<LoginViewModel>();
 
             builder.Singleton<InternalLibraryViewLocator, IFormsViewLocator>(IfRegistered.Replace);
 
