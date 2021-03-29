@@ -27,6 +27,8 @@ namespace InternalLibrary.Forms
 
         protected override void ConfigureIoc(IContainerBuilder builder)
         {
+            builder.PerDependency<SignInViewModel>();
+            builder.PerDependency<SignUpViewModel>();
             builder.PerDependency<BookListViewModel>();
             builder.PerDependency<BookViewModel>();
             builder.PerDependency<LoginViewModel>();
