@@ -10,7 +10,7 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
     <PackageReference Include="Google.Apis.Sheets.v4" Version="1.50.0.2259" />
     <PackageReference Include="FirebaseAuthentication.net" Version="3.6.0" />
-    <PackageReference Include="FirebaseDatabase.net" Version="4.0.6" />
+    <PackageReference Include="FireSharp" Version="2.0.4" />
   </ItemGroup>
 
   <ItemGroup>
