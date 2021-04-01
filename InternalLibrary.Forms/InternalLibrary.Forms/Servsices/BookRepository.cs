@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Services;
 using Google.Apis.Sheets.v4;
@@ -20,7 +21,7 @@ namespace InternalLibrary.Forms.Servsices
             books = new List<Book>();
         }
 
-        public IEnumerable<Book> GetBookListAsync(string token)
+        public async Task<IEnumerable<Book>> GetBookListAsync(string token)
         {
             GoogleCredential credential = GoogleCredential.FromAccessToken(token).CreateScoped(Scopes);
 
@@ -38,9 +39,10 @@ namespace InternalLibrary.Forms.Servsices
             books.AddRange(response.Select(value => new Book()
             {
                 Title = value[1].ToString(),
-                InternationalStandardBookNumber = value[3].ToString(),
-                Status = value[4].ToString(),
-                URL = value[5].ToString()
+                Language = value[2].ToString(),
+                InternationalStandardBookNumber = value[4].ToString(),
+                Location = value[5].ToString(),
+                URL = value[6].ToString()
             }));
 
             books.RemoveAt(0);
