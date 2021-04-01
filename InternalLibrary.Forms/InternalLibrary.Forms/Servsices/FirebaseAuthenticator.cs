@@ -8,7 +8,7 @@ namespace InternalLibrary.Forms.Servsices
 {
     public class FirebaseAuthenticator : IFirebaseAuthenticator
     {
-        private const string WebAPIKey = "AIzaSyBR0u185PPGqqbtUEp_edvJZlFIwATjQrg";
+        private const string WebAPIKey = "AIzaSyAXZ9HF8h_ZyWDG76SzDcI6aamo4rgbT_E";
         private const string FirebaseTokenPropertyName = "FirebaseToken";
 
         public async Task<User> SignInAsync(string email, string password)
@@ -33,15 +33,15 @@ namespace InternalLibrary.Forms.Servsices
             return user;
         }
 
-        public async Task<string> SignUpAsync(string email, string password)
+        public async Task<User> SignUpAsync(string email, string password)
         {
-            string token = string.Empty;
+            User user = null;
 
             try
             {
                 var authProvider = new FirebaseAuthProvider(new FirebaseConfig(WebAPIKey));
                 var auth = await authProvider.CreateUserWithEmailAndPasswordAsync(email, password);
-                token = auth.FirebaseToken;
+                user = auth.User;
                 await App.Current.MainPage.DisplayAlert("SignUp", "Success!", "Ok");
             }
             catch(Exception e)
@@ -49,7 +49,7 @@ namespace InternalLibrary.Forms.Servsices
                 await App.Current.MainPage.DisplayAlert("SignUp", e.Message, "Ok");
             }
 
-            return token;
+            return user;
         }
 
         public async Task<User> RefreshTokenAsync()
