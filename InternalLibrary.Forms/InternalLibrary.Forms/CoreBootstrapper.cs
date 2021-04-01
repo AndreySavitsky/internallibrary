@@ -36,6 +36,7 @@ namespace InternalLibrary.Forms
 
             builder.Singleton<FirebaseAuthenticator, IFirebaseAuthenticator>();
             builder.Singleton<WebAuthenticatorService, IWebAuthenticatorService>();
+            builder.Singleton<FirebaseDatabase, IFirebaseDatabase>();
             builder.Singleton<BookRepository, IBookRepository>();
         }
     }
