@@ -51,7 +51,9 @@ namespace InternalLibrary.Forms.ViewModels
 
         private async Task OnSignIn()
         {
-            var token = await _firebaseAuthenticator.SignInAsync(Email, Password);
+            var user = await _firebaseAuthenticator.SignInAsync(Email, Password);
+
+            _pageNavigationService.For<BookListViewModel>().Navigate();
         }
 
         private async Task OnSignUp()
