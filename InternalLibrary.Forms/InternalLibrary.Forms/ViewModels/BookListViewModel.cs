@@ -9,6 +9,7 @@ namespace InternalLibrary.Forms.ViewModels
     public class BookListViewModel : ViewModelBase
     {
         private readonly IPageNavigationService _pageNavigationService;
+        private readonly IFirebaseDatabase _firebaseDatabase;
         private readonly IWebAuthenticatorService _webAuthenticatorService;
         private readonly IBookRepository _bookRepository;
 
@@ -17,16 +18,18 @@ namespace InternalLibrary.Forms.ViewModels
 
         public BookListViewModel(
             IPageNavigationService pageNavigationService,
+            IFirebaseDatabase firebaseDatabase,
             IWebAuthenticatorService webAuthenticatorService,
             IBookRepository bookRepository)
         {
             _pageNavigationService = pageNavigationService;
+            _firebaseDatabase = firebaseDatabase;
             _webAuthenticatorService = webAuthenticatorService;
             _bookRepository = bookRepository;
 
             BookList = new ObservableRangeCollection<Book>();
 
-            Authenticate();
+            _firebaseDatabase.GetBooksAsync();
         }
 
         public string Title
@@ -58,7 +61,7 @@ namespace InternalLibrary.Forms.ViewModels
         {
             var result = await _webAuthenticatorService.OnGoogleAuthenticate();
 
-            BookList.AddRange(_bookRepository.GetBookListAsync(result.AccessToken));
+            BookList.AddRange(await _bookRepository.GetBookListAsync(result.AccessToken));
         }
     }
 }
