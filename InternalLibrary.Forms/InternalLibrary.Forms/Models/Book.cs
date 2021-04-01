@@ -5,14 +5,34 @@ namespace InternalLibrary.Forms.Models
     public class Book : ObservableObject
     {
         private string _title = string.Empty;
-        private string _url = string.Empty;
-        private string _status = string.Empty;
+        private string _author = string.Empty;
         private string _internationalStandardBookNumber = string.Empty;
+        private string _language = string.Empty;
+        private string _url = string.Empty;
+        private string _location = string.Empty;
 
         public string Title
         {
             get => _title;
             set => Set(ref _title, value);
+        }
+
+        public string Author
+        {
+            get => _author;
+            set => Set(ref _author, value);
+        }
+
+        public string InternationalStandardBookNumber
+        {
+            get => _internationalStandardBookNumber;
+            set => Set(ref _internationalStandardBookNumber, value);
+        }
+
+        public string Language
+        {
+            get => _language;
+            set => Set(ref _language, value);
         }
 
         public string URL
@@ -21,16 +41,10 @@ namespace InternalLibrary.Forms.Models
             set => Set(ref _url, value);
         }
 
-        public string Status
+        public string Location
         {
-            get => _status;
-            set => Set(ref _status, value);
-        }
-
-        public string InternationalStandardBookNumber
-        {
-            get => _internationalStandardBookNumber;
-            set => Set(ref _internationalStandardBookNumber, value);
+            get => _location;
+            set => Set(ref _location, value);
         }
     }
 }

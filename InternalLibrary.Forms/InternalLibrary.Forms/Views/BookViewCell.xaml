@@ -15,7 +15,7 @@
                         Text="{Binding InternationalStandardBookNumber}"
                         Style="{StaticResource BookISBNTextStyle}"/>
                     <Label
-                        Text="{Binding Status}"
+                        Text="{Binding Location}"
                         Style="{StaticResource BookStatusTextStyle}"/>
                 </StackLayout>
             </StackLayout>
