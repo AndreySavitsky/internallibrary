@@ -49,11 +49,19 @@ namespace InternalLibrary.Forms.ViewModels
             set => Set(ref _password, value);
         }
 
+        public override void OnInitialize()
+        {
+            base.OnInitialize();
+        }
+
         private async Task OnSignIn()
         {
             var user = await _firebaseAuthenticator.SignInAsync(Email, Password);
 
-            _pageNavigationService.For<BookListViewModel>().Navigate();
+            if(user != null)
+            {
+                _pageNavigationService.NavigateToViewModel<BookListViewModel>(true, null);
+            }
         }
 
         private async Task OnSignUp()
