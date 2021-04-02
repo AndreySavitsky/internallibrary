@@ -1,8 +1,6 @@
-﻿using Xamarin.Forms;
-
-namespace InternalLibrary.Forms.Views
+﻿namespace InternalLibrary.Forms.Views
 {
-    public partial class SignInView : ContentPage
+    public partial class SignInView : ViewBase
     {
         public SignInView()
         {
