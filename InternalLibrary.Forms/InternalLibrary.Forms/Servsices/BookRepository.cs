@@ -13,7 +13,7 @@ namespace InternalLibrary.Forms.Servsices
         static readonly string[] Scopes = { SheetsService.Scope.SpreadsheetsReadonly };
 
         private const string _spreadsheetId = "1w9GBc2LHN2UvCe7SGtcnczz5bPrW1dj5URfj6_oVhe0";
-        private const string _range = "Books!A:F";
+        private const string _range = "Books!A:G";
         private List<Book> books;
 
         public BookRepository()
@@ -32,7 +32,7 @@ namespace InternalLibrary.Forms.Servsices
             });
 
             var request = service.Spreadsheets.Values.Get(_spreadsheetId, _range);
-            var response = request.Execute().Values.Where(value => value.Count > 5);
+            var response = request.Execute().Values.Where(value => value.Count > 6);
 
             books.Clear();
 
