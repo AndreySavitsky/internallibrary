@@ -3,6 +3,7 @@ using System.Windows.Input;
 using InternalLibrary.Forms.Servsices;
 using Softeq.XToolkit.Common.Commands;
 using Softeq.XToolkit.WhiteLabel.Mvvm;
+using Softeq.XToolkit.WhiteLabel.Navigation;
 
 namespace InternalLibrary.Forms.ViewModels
 {
@@ -13,10 +14,14 @@ namespace InternalLibrary.Forms.ViewModels
         private string _password = string.Empty;
         private string _confirmPassword = string.Empty;
 
+        private readonly IPageNavigationService _pageNavigationService;
         private readonly IFirebaseAuthenticator _firebaseAuthenticator;
 
-        public SignUpViewModel(IFirebaseAuthenticator firebaseAuthenticator)
+        public SignUpViewModel(
+            IPageNavigationService pageNavigationService,
+            IFirebaseAuthenticator firebaseAuthenticator)
         {
+            _pageNavigationService = pageNavigationService;
             _firebaseAuthenticator = firebaseAuthenticator;
 
             CreateAccountCommand = new AsyncCommand(OnCreateAccount);
@@ -53,6 +58,11 @@ namespace InternalLibrary.Forms.ViewModels
             if(Password.Equals(ConfirmPassword))
             {
                 var token = await _firebaseAuthenticator.SignUpAsync(Email, Password);
+
+                if(token != null)
+                {
+                    _pageNavigationService.GoBack();
+                }
             }
             else
             {
