@@ -8,5 +8,7 @@ namespace InternalLibrary.Forms.Servsices
         Task<User> SignInAsync(string email, string password);
         Task<User> SignUpAsync(string email, string password);
         Task<User> RefreshTokenAsync();
+
+        FirebaseAuth FirebaseAuth { get; }
     }
 }

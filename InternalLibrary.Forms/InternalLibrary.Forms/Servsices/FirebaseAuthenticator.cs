@@ -11,6 +11,14 @@ namespace InternalLibrary.Forms.Servsices
         private const string WebAPIKey = "AIzaSyAXZ9HF8h_ZyWDG76SzDcI6aamo4rgbT_E";
         private const string FirebaseTokenPropertyName = "FirebaseToken";
 
+        public FirebaseAuth FirebaseAuth
+        {
+            get
+            {
+                return JsonConvert.DeserializeObject<FirebaseAuth>(Preferences.Get(FirebaseTokenPropertyName, string.Empty));
+            }
+        }
+
         public async Task<User> SignInAsync(string email, string password)
         {
             User user = null;
