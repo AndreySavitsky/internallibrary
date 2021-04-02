@@ -49,9 +49,14 @@ namespace InternalLibrary.Forms.ViewModels
             set => Set(ref _password, value);
         }
 
-        public override void OnInitialize()
+        public override void OnAppearing()
         {
-            base.OnInitialize();
+            base.OnAppearing();
+
+            if(_firebaseAuthenticator.FirebaseAuth != null)
+            {
+                _pageNavigationService.NavigateToViewModel<BookListViewModel>(true, null);
+            }
         }
 
         private async Task OnSignIn()
