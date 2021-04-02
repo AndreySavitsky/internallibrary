@@ -10,26 +10,20 @@ namespace InternalLibrary.Forms.ViewModels
     {
         private readonly IPageNavigationService _pageNavigationService;
         private readonly IFirebaseDatabase _firebaseDatabase;
-        private readonly IWebAuthenticatorService _webAuthenticatorService;
-        private readonly IBookRepository _bookRepository;
 
         private string _title = string.Empty;
         private Book _book;
 
         public BookListViewModel(
             IPageNavigationService pageNavigationService,
-            IFirebaseDatabase firebaseDatabase,
-            IWebAuthenticatorService webAuthenticatorService,
-            IBookRepository bookRepository)
+            IFirebaseDatabase firebaseDatabase)
         {
             _pageNavigationService = pageNavigationService;
             _firebaseDatabase = firebaseDatabase;
-            _webAuthenticatorService = webAuthenticatorService;
-            _bookRepository = bookRepository;
 
             BookList = new ObservableRangeCollection<Book>();
 
-            _firebaseDatabase.GetBooksAsync();
+            LoadBooksAsync();
         }
 
         public string Title
@@ -52,16 +46,9 @@ namespace InternalLibrary.Forms.ViewModels
 
         public ObservableRangeCollection<Book> BookList { get; }
 
-        public override void OnInitialize()
+        private async void LoadBooksAsync()
         {
-            base.OnInitialize();
-        }
-
-        private async void Authenticate()
-        {
-            var result = await _webAuthenticatorService.OnGoogleAuthenticate();
-
-            BookList.AddRange(await _bookRepository.GetBookListAsync(result.AccessToken));
+            BookList.AddRange((await _firebaseDatabase.GetBooksAsync()).Values);
         }
     }
 }
