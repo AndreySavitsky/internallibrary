@@ -23,7 +23,6 @@ namespace InternalLibrary.Forms.Servsices
                 var serializedContent = JsonConvert.SerializeObject(content);
                 Preferences.Set(FirebaseTokenPropertyName, serializedContent);
                 user = auth.User;
-                await App.Current.MainPage.DisplayAlert("SignIn", "Success!", "Ok");
             }
             catch (Exception e)
             {
@@ -42,7 +41,6 @@ namespace InternalLibrary.Forms.Servsices
                 var authProvider = new FirebaseAuthProvider(new FirebaseConfig(WebAPIKey));
                 var auth = await authProvider.CreateUserWithEmailAndPasswordAsync(email, password);
                 user = auth.User;
-                await App.Current.MainPage.DisplayAlert("SignUp", "Success!", "Ok");
             }
             catch(Exception e)
             {
