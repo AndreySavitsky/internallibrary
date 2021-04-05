@@ -1,26 +1,22 @@
-﻿using Softeq.XToolkit.Common;
+﻿using InternalLibrary.Forms.Enums;
+using Softeq.XToolkit.Common;
 
 namespace InternalLibrary.Forms.Models
 {
     public class Book : ObservableObject
     {
         private string _title = string.Empty;
-        private string _author = string.Empty;
         private string _internationalStandardBookNumber = string.Empty;
         private string _language = string.Empty;
         private string _url = string.Empty;
-        private string _location = string.Empty;
+        private string _email = string.Empty;
+        private string _description = string.Empty;
+        private string _status = BookStatus.Free;
 
         public string Title
         {
             get => _title;
             set => Set(ref _title, value);
-        }
-
-        public string Author
-        {
-            get => _author;
-            set => Set(ref _author, value);
         }
 
         public string InternationalStandardBookNumber
@@ -41,10 +37,22 @@ namespace InternalLibrary.Forms.Models
             set => Set(ref _url, value);
         }
 
-        public string Location
+        public string Email
         {
-            get => _location;
-            set => Set(ref _location, value);
+            get => _email;
+            set => Set(ref _email, value);
+        }
+
+        public string Description
+        {
+            get => _description;
+            set => Set(ref _description, value);
+        }
+
+        public string Status
+        {
+            get => _status;
+            set => Set(ref _status, value);
         }
     }
 }

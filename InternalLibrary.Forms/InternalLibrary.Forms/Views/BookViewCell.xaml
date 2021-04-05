@@ -11,10 +11,13 @@
                         Style="{StaticResource BookTitleTextStyle}"/>
                 <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                     <Label
-                        Text="{Binding InternationalStandardBookNumber}"
+                        Text="{Binding Status}"
                         Style="{StaticResource BookISBNTextStyle}"/>
                     <Label
-                        Text="{Binding Location}"
+                        Text="{Binding Email}"
+                        Style="{StaticResource BookEmailTextStyle}"/>
+                    <Label
+                        Text="{Binding Description}"
                         Style="{StaticResource BookStatusTextStyle}"/>
                 </StackLayout>
             </StackLayout>

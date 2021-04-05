@@ -41,7 +41,7 @@ namespace InternalLibrary.Forms.Servsices
                 Title = value[1].ToString(),
                 Language = value[2].ToString(),
                 InternationalStandardBookNumber = value[4].ToString(),
-                Location = value[5].ToString(),
+                Description = value[5].ToString(),
                 URL = value[6].ToString()
             }));
 
