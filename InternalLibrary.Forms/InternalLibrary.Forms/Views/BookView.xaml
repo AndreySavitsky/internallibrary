@@ -4,6 +4,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="InternalLibrary.Forms.Views.BookView">
     <ContentPage.Content>
-        <WebView Source="{Binding Book.URL}"/>
+        <StackLayout>
+
+            <WebView Source="{Binding Book.URL}"
+                     VerticalOptions="FillAndExpand"/>
+            <Button Text="Request book"
+                    Command="{Binding RequestBookCommand}"/>
+
+        </StackLayout>
     </ContentPage.Content>
 </views:ViewBase>
