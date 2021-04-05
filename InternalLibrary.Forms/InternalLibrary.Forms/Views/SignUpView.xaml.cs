@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-
-using Xamarin.Forms;
-
-namespace InternalLibrary.Forms.Views
+﻿namespace InternalLibrary.Forms.Views
 {
-    public partial class SignUpView : ContentPage
+    public partial class SignUpView : ViewBase
     {
         public SignUpView()
         {

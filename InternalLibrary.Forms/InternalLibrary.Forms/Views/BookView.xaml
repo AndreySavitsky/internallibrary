@@ -1,8 +1,9 @@
-﻿<ContentPage
+﻿<views:ViewBase
+    xmlns:views="clr-namespace:InternalLibrary.Forms.Views"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="InternalLibrary.Forms.Views.BookView">
     <ContentPage.Content>
         <WebView Source="{Binding Book.URL}"/>
     </ContentPage.Content>
-</ContentPage>
+</views:ViewBase>
