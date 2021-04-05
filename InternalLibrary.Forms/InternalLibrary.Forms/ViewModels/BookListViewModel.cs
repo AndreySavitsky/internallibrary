@@ -22,8 +22,6 @@ namespace InternalLibrary.Forms.ViewModels
             _firebaseDatabase = firebaseDatabase;
 
             BookList = new ObservableRangeCollection<Book>();
-
-            LoadBooksAsync();
         }
 
         public string Title
@@ -46,9 +44,14 @@ namespace InternalLibrary.Forms.ViewModels
 
         public ObservableRangeCollection<Book> BookList { get; }
 
-        private async void LoadBooksAsync()
+        public async override void OnAppearing()
         {
-            BookList.AddRange((await _firebaseDatabase.GetBooksAsync()).Values);
+            base.OnAppearing();
+
+            if(BookList.Count == 0)
+            {
+                BookList.AddRange((await _firebaseDatabase.GetBooksAsync()).Values);
+            }
         }
     }
 }
