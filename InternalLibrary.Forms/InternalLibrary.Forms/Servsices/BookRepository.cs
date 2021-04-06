@@ -23,7 +23,7 @@ namespace InternalLibrary.Forms.Servsices
 
         public async Task<IEnumerable<Book>> GetBookListAsync(string token)
         {
-            GoogleCredential credential = GoogleCredential.FromAccessToken(token).CreateScoped(Scopes);
+            var credential = GoogleCredential.FromAccessToken(token).CreateScoped(Scopes);
 
             var service = new SheetsService(new BaseClientService.Initializer()
             {

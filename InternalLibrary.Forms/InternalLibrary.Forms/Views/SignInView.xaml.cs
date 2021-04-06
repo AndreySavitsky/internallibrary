@@ -1,6 +1,6 @@
 ﻿namespace InternalLibrary.Forms.Views
 {
-    public partial class SignInView : ViewBase
+    public partial class SignInView : ContentViewBase
     {
         public SignInView()
         {

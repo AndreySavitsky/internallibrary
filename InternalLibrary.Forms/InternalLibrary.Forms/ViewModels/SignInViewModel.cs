@@ -28,7 +28,6 @@ namespace InternalLibrary.Forms.ViewModels
         }
 
         public ICommand SignInCommand { get; }
-
         public ICommand SignUpCommand { get; }
 
         public string Title

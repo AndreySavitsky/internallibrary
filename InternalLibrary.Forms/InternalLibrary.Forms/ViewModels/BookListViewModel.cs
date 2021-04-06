@@ -1,4 +1,5 @@
-﻿using InternalLibrary.Forms.Models;
+﻿using System.Linq;
+using InternalLibrary.Forms.Models;
 using InternalLibrary.Forms.Servsices;
 using Softeq.XToolkit.Common.Collections;
 using Softeq.XToolkit.WhiteLabel.Mvvm;
@@ -48,7 +49,7 @@ namespace InternalLibrary.Forms.ViewModels
         {
             base.OnAppearing();
 
-            if(BookList.Count == 0)
+            if(!BookList.Any())
             {
                 BookList.AddRange((await _firebaseDatabase.GetBooksAsync()).Values);
             }

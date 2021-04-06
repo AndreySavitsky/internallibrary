@@ -2,7 +2,7 @@
 
 namespace InternalLibrary.Forms.Views
 {
-    public partial class StartView : ViewBase
+    public partial class StartView : ContentViewBase
     {
         public StartView()
         {

@@ -10,14 +10,16 @@ namespace InternalLibrary.Forms.Servsices
     {
         private const string _adminRepository = "Admins";
         private const string _bookRepository = "Books";
+        private const string _basePath = "https://internallibrary-1613129931597-default-rtdb.firebaseio.com/";
+        private const string _authSecret = "WIJm2DS25C044quptjYZ9PgbevssjFa7KltaAjxb";
         private readonly FirebaseClient _client;
 
         public FirebaseDatabase()
         {
             _client = new FirebaseClient(new FirebaseConfig()
             {
-                BasePath = "https://internallibrary-1613129931597-default-rtdb.firebaseio.com/",
-                AuthSecret = "WIJm2DS25C044quptjYZ9PgbevssjFa7KltaAjxb"
+                BasePath = _basePath,
+                AuthSecret = _authSecret
             });
         }
 
@@ -32,9 +34,7 @@ namespace InternalLibrary.Forms.Servsices
         public async Task<Dictionary<string, Book>> GetBooksAsync()
         {
             var response = await _client.GetAsync(_bookRepository);
-            var books = response.ResultAs<Dictionary<string, Book>>();
-
-            return books;
+            return response.ResultAs<Dictionary<string, Book>>();
         }
 
         public async Task<Book> SetBookAsync(Book book)

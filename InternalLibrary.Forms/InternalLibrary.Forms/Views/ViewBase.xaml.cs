@@ -3,9 +3,9 @@ using Xamarin.Forms;
 
 namespace InternalLibrary.Forms.Views
 {
-    public partial class ViewBase : ContentPage
+    public partial class ContentViewBase : ContentPage
     {
-        public ViewBase()
+        public ContentViewBase()
         {
             InitializeComponent();
         }

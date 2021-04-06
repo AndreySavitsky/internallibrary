@@ -8,8 +8,8 @@ namespace InternalLibrary.Forms.Servsices
 {
     public class FirebaseAuthenticator : IFirebaseAuthenticator
     {
-        private const string WebAPIKey = "AIzaSyAXZ9HF8h_ZyWDG76SzDcI6aamo4rgbT_E";
-        private const string FirebaseTokenPropertyName = "FirebaseToken";
+        private string WebAPIKey => "AIzaSyAXZ9HF8h_ZyWDG76SzDcI6aamo4rgbT_E";
+        private string FirebaseTokenPropertyName => "FirebaseToken";
         private bool _isAdmin;
 
         private readonly IFirebaseDatabase _firebaseDatabase;
