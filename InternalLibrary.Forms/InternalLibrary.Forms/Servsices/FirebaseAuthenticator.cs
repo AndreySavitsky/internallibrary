@@ -10,14 +10,18 @@ namespace InternalLibrary.Forms.Servsices
     {
         private const string WebAPIKey = "AIzaSyAXZ9HF8h_ZyWDG76SzDcI6aamo4rgbT_E";
         private const string FirebaseTokenPropertyName = "FirebaseToken";
+        private bool _isAdmin;
 
-        public FirebaseAuth FirebaseAuth
+        private readonly IFirebaseDatabase _firebaseDatabase;
+
+        public FirebaseAuthenticator(IFirebaseDatabase firebaseDatabase)
         {
-            get
-            {
-                return JsonConvert.DeserializeObject<FirebaseAuth>(Preferences.Get(FirebaseTokenPropertyName, string.Empty));
-            }
+            _firebaseDatabase = firebaseDatabase;
         }
+
+        public bool IsAdmin => _isAdmin;
+
+        public FirebaseAuth FirebaseAuth => JsonConvert.DeserializeObject<FirebaseAuth>(Preferences.Get(FirebaseTokenPropertyName, string.Empty));
 
         public async Task<User> SignInAsync(string email, string password)
         {
@@ -31,6 +35,9 @@ namespace InternalLibrary.Forms.Servsices
                 var serializedContent = JsonConvert.SerializeObject(content);
                 Preferences.Set(FirebaseTokenPropertyName, serializedContent);
                 user = auth.User;
+
+                var admins = await _firebaseDatabase.GetAdminsAsync();
+                _isAdmin = admins.ContainsValue(user.LocalId);
             }
             catch (Exception e)
             {
@@ -69,6 +76,9 @@ namespace InternalLibrary.Forms.Servsices
                 var refreshedContent = await authProvider.RefreshAuthAsync(savedFirebaseAuth);
                 user = savedFirebaseAuth.User;
                 Preferences.Set(FirebaseTokenPropertyName, JsonConvert.SerializeObject(refreshedContent));
+
+                var admins = await _firebaseDatabase.GetAdminsAsync();
+                _isAdmin = admins.ContainsValue(user.LocalId);
             }
             catch(Exception e)
             {
