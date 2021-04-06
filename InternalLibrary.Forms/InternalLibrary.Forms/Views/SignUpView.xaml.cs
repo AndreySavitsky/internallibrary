@@ -1,8 +1,8 @@
 ﻿namespace InternalLibrary.Forms.Views
 {
-    public partial class BookListView : ContentViewBase
+    public partial class SignUpView : ContentViewBase
     {
-        public BookListView()
+        public SignUpView()
         {
             InitializeComponent();
         }

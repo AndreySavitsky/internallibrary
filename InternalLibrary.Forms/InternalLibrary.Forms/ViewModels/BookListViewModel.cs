@@ -1,4 +1,5 @@
-﻿using InternalLibrary.Forms.Models;
+﻿using System.Linq;
+using InternalLibrary.Forms.Models;
 using InternalLibrary.Forms.Servsices;
 using Softeq.XToolkit.Common.Collections;
 using Softeq.XToolkit.WhiteLabel.Mvvm;
@@ -9,24 +10,19 @@ namespace InternalLibrary.Forms.ViewModels
     public class BookListViewModel : ViewModelBase
     {
         private readonly IPageNavigationService _pageNavigationService;
-        private readonly IWebAuthenticatorService _webAuthenticatorService;
-        private readonly IBookRepository _bookRepository;
+        private readonly IFirebaseDatabase _firebaseDatabase;
 
         private string _title = string.Empty;
         private Book _book;
 
         public BookListViewModel(
             IPageNavigationService pageNavigationService,
-            IWebAuthenticatorService webAuthenticatorService,
-            IBookRepository bookRepository)
+            IFirebaseDatabase firebaseDatabase)
         {
             _pageNavigationService = pageNavigationService;
-            _webAuthenticatorService = webAuthenticatorService;
-            _bookRepository = bookRepository;
+            _firebaseDatabase = firebaseDatabase;
 
             BookList = new ObservableRangeCollection<Book>();
-
-            Authenticate();
         }
 
         public string Title
@@ -49,16 +45,14 @@ namespace InternalLibrary.Forms.ViewModels
 
         public ObservableRangeCollection<Book> BookList { get; }
 
-        public override void OnInitialize()
+        public async override void OnAppearing()
         {
-            base.OnInitialize();
-        }
+            base.OnAppearing();
 
-        private async void Authenticate()
-        {
-            var result = await _webAuthenticatorService.OnGoogleAuthenticate();
-
-            BookList.AddRange(_bookRepository.GetBookListAsync(result.AccessToken));
+            if(!BookList.Any())
+            {
+                BookList.AddRange((await _firebaseDatabase.GetBooksAsync()).Values);
+            }
         }
     }
 }

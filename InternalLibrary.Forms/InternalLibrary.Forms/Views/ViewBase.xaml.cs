@@ -1,10 +1,11 @@
-﻿using Xamarin.Forms;
+﻿using Softeq.XToolkit.WhiteLabel.Mvvm;
+using Xamarin.Forms;
 
 namespace InternalLibrary.Forms.Views
 {
-    public partial class StartView : ContentViewBase
+    public partial class ContentViewBase : ContentPage
     {
-        public StartView()
+        public ContentViewBase()
         {
             InitializeComponent();
         }
@@ -12,15 +13,13 @@ namespace InternalLibrary.Forms.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
-            ActivityIndicator.IsRunning = true;
+            (BindingContext as ViewModelBase).OnAppearing();
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-
-            ActivityIndicator.IsRunning = false;
+            (BindingContext as ViewModelBase).OnDisappearing();
         }
     }
 }

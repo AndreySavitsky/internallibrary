@@ -19,7 +19,12 @@
 
             <Style x:Key="BookISBNTextStyle" TargetType="Label">
                 <Setter Property="FontSize" Value="Micro"/>
-                <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+                <Setter Property="HorizontalOptions" Value="Start"/>
+            </Style>
+
+            <Style x:Key="BookEmailTextStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="Micro"/>
+                <Setter Property="HorizontalOptions" Value="Start"/>
             </Style>
 
             <Style x:Key="BookStatusTextStyle" TargetType="Label">

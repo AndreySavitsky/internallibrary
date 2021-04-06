@@ -27,13 +27,16 @@ namespace InternalLibrary.Forms
 
         protected override void ConfigureIoc(IContainerBuilder builder)
         {
+            builder.PerDependency<SignInViewModel>();
+            builder.PerDependency<SignUpViewModel>();
             builder.PerDependency<BookListViewModel>();
             builder.PerDependency<BookViewModel>();
 
             builder.Singleton<InternalLibraryViewLocator, IFormsViewLocator>(IfRegistered.Replace);
 
+            builder.Singleton<FirebaseAuthenticator, IFirebaseAuthenticator>();
             builder.Singleton<WebAuthenticatorService, IWebAuthenticatorService>();
-
+            builder.Singleton<FirebaseDatabase, IFirebaseDatabase>();
             builder.Singleton<BookRepository, IBookRepository>();
         }
     }
