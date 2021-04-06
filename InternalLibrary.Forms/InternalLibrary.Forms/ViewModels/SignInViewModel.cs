@@ -49,12 +49,13 @@ namespace InternalLibrary.Forms.ViewModels
             set => Set(ref _password, value);
         }
 
-        public override void OnAppearing()
+        public async override void OnAppearing()
         {
             base.OnAppearing();
 
             if(_firebaseAuthenticator.FirebaseAuth != null)
             {
+                await _firebaseAuthenticator.RefreshTokenAsync();
                 _pageNavigationService.NavigateToViewModel<BookListViewModel>(true, null);
             }
         }
